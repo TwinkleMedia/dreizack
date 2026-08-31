@@ -1,0 +1,3 @@
+.app-card:hover .app-arrow { background-color: #FFCC29; }
+  .app-card:hover .app-arrow svg { color: #00482D; transform: translate(2px,-2px); }
+  .app-card:hover .app-img { transform: scale(1.06); }
