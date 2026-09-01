@@ -527,6 +527,93 @@
   </div>
 </section>
 
+<!-- ============ PROJECTS / CASE STUDIES ============ -->
+<section class="relative">
+  <div class="max-w-[1240px] mx-auto px-6 sm:px-8 py-16 lg:py-24">
+ 
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12 lg:mb-14">
+      <div class="max-w-xl">
+        <p class="text-dreizack-green text-[13px] font-heading font-bold tracking-wide uppercase mb-3">Our Work</p>
+        <h2 class="font-heading font-extrabold text-dreizack-dark text-[32px] sm:text-[40px] leading-[1.1] mb-4">
+          Projects built on the Dreizack system
+        </h2>
+        <p class="text-[#3d4a44] text-[15.5px] leading-relaxed">
+          A look at where our tie-plate and panel systems have gone to work — across residential
+          towers, commercial builds, and infrastructure sites.
+        </p>
+      </div>
+      <a href="./projects.html" class="shrink-0 inline-flex items-center gap-2 text-dreizack-dark font-heading font-bold text-[14px] hover:text-dreizack-green transition-colors w-fit">
+        View all projects
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+ 
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+ 
+      <!-- Project 1 -->
+      <a href="./project-skyline-residency.html" class="proj-card group block">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="./assets/project-01.jpg"
+               onerror="this.onerror=null;this.src='https://picsum.photos/id/1041/700/560';"
+               alt="Skyline Residency Towers project" class="proj-img w-full h-full object-cover transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-dreizack-dark/75 via-dreizack-dark/0 to-transparent"></div>
+          <div class="absolute top-0 left-0 bg-dreizack-dark/90 px-4 py-2">
+            <span class="text-white text-[12.5px] font-heading font-semibold tracking-wide">G+42 Residential Tower</span>
+          </div>
+          <div class="proj-arrow absolute bottom-0 right-0 w-12 h-12 bg-dreizack-green flex items-center justify-center transition-colors duration-200">
+            <svg class="w-5 h-5 text-white transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </div>
+        </div>
+        <div class="pt-4 border-b border-dreizack-dark/10 pb-4">
+          <h3 class="font-heading font-bold text-dreizack-dark text-[17px] mb-1">Skyline Residency</h3>
+          <p class="text-[#5a655f] text-[13.5px]">Pune, Maharashtra · Shear walls, columns</p>
+        </div>
+      </a>
+ 
+      <!-- Project 2 -->
+      <a href="./project-riverfront-business-park.html" class="proj-card group block">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="./assets/project-02.jpg"
+               onerror="this.onerror=null;this.src='https://picsum.photos/id/1048/700/560';"
+               alt="Riverfront Business Park project" class="proj-img w-full h-full object-cover transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-dreizack-dark/75 via-dreizack-dark/0 to-transparent"></div>
+          <div class="absolute top-0 left-0 bg-dreizack-dark/90 px-4 py-2">
+            <span class="text-white text-[12.5px] font-heading font-semibold tracking-wide">Commercial Complex</span>
+          </div>
+          <div class="proj-arrow absolute bottom-0 right-0 w-12 h-12 bg-dreizack-green flex items-center justify-center transition-colors duration-200">
+            <svg class="w-5 h-5 text-white transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </div>
+        </div>
+        <div class="pt-4 border-b border-dreizack-dark/10 pb-4">
+          <h3 class="font-heading font-bold text-dreizack-dark text-[17px] mb-1">Riverfront Business Park</h3>
+          <p class="text-[#5a655f] text-[13.5px]">Navi Mumbai, Maharashtra · Lift-core walls, retaining walls</p>
+        </div>
+      </a>
+ 
+      <!-- Project 3 -->
+      <a href="./project-metro-viaduct.html" class="proj-card group block">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="./assets/project-03.jpg"
+               onerror="this.onerror=null;this.src='https://picsum.photos/id/1069/700/560';"
+               alt="Metro viaduct infrastructure project" class="proj-img w-full h-full object-cover transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-dreizack-dark/75 via-dreizack-dark/0 to-transparent"></div>
+          <div class="absolute top-0 left-0 bg-dreizack-dark/90 px-4 py-2">
+            <span class="text-white text-[12.5px] font-heading font-semibold tracking-wide">Infrastructure</span>
+          </div>
+          <div class="proj-arrow absolute bottom-0 right-0 w-12 h-12 bg-dreizack-green flex items-center justify-center transition-colors duration-200">
+            <svg class="w-5 h-5 text-white transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </div>
+        </div>
+        <div class="pt-4 border-b border-dreizack-dark/10 pb-4">
+          <h3 class="font-heading font-bold text-dreizack-dark text-[17px] mb-1">Metro Viaduct Extension</h3>
+          <p class="text-[#5a655f] text-[13.5px]">Pune, Maharashtra · Columns, staircase</p>
+        </div>
+      </a>
+ 
+    </div>
+  </div>
+</section> 
+
 
 <!-- ============ FEATURES ============ -->
 <section class="relative">
