@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dreizack — Navbar</title>
+<title>Dreizack</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -46,64 +46,236 @@
 </section>
 
 <!-- ============ ABOUT / FLAGSHIP PRODUCT ============ -->
-<section class="relative overflow-hidden">
+<!-- ============ ABOUT US ============ -->
+
+<section id="about" class="relative overflow-hidden">
+
+  <div class="max-w-[1240px] mx-auto px-6 sm:px-8 py-16 lg:py-24">
+
+
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+
+  <!-- Image side -->
+  <div class="lg:col-span-5 relative">
+
+    <!-- Offset structural background block -->
+    <div
+      class="absolute -top-5 -left-5 w-full h-full bg-dreizack-green hidden sm:block"
+      aria-hidden="true">
+    </div>
+
+    <div class="relative aspect-[4/5] w-full overflow-hidden shadow-xl">
+
+      <img
+        src="./assets/banner1.webp"
+        onerror="this.onerror=null;this.src='https://picsum.photos/id/1073/900/1100';"
+        alt="MDFS aluminium formwork manufacturing system"
+        class="w-full h-full object-cover">
+
+      <!-- Corner accent tag -->
+      <div class="absolute bottom-0 left-0 bg-dreizack-dark px-5 py-3 flex items-center gap-2">
+
+        <span
+          class="w-2 h-2 bg-dreizack-gold"
+          aria-hidden="true">
+        </span>
+
+        <span
+          class="text-white text-[13px] font-heading font-semibold tracking-wide uppercase">
+          MDFS Aluminium Formwork
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Content side -->
+  <div class="lg:col-span-7">
+
+    <!-- Small Heading -->
+    <p class="text-dreizack-green text-[13px] font-heading font-bold tracking-wide uppercase mb-3">
+      About MDFS
+    </p>
+
+
+    <!-- Main Heading -->
+    <h2 class="font-heading font-extrabold text-dreizack-dark text-[32px] sm:text-[40px] lg:text-[46px] leading-[1.1] mb-6 max-w-xl">
+      Technical Advantage in Modern Construction
+    </h2>
+
+
+    <!-- Description -->
+    <div class="space-y-4 max-w-xl text-[#3d4a44] text-[15.5px] leading-relaxed">
+
+      <p>
+       Dreizack Formwork Solutions (DFS), based in Mumbai and established in April 2017, provides innovative and reliable solutions for the construction industry. With over 18 years of expertise in Monolithic, Modular and Climbing Formwork Systems, as well as Scaffoldings, we deliver efficient solutions for modern RCC structures.
+      </p>
+
+      <p>
+       DFS works closely with leading technology and manufacturing partners to provide engineered, cost-effective, and high-quality formwork solutions. Through strong collaboration and technical expertise, we aim to support the advancement of modern civil engineering and construction practices.
+      </p>
+
+      
+
+     
+
+    </div>
+
+
+    <!-- Feature Strip -->
+    <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 border-t border-dreizack-dark/10">
+
+      <!-- Feature 1 -->
+      <div class="py-5 sm:pr-6 sm:border-r border-dreizack-dark/10 border-b sm:border-b-0">
+
+        <p class="font-heading font-bold text-dreizack-dark text-[15px] mb-1">
+          18+ Years Experience
+        </p>
+
+        <p class="text-[#5a655f] text-[13.5px] leading-relaxed">
+          Extensive expertise across multiple formwork and construction systems.
+        </p>
+
+      </div>
+
+
+      <!-- Feature 2 -->
+      <div class="py-5 sm:px-6 sm:border-r border-dreizack-dark/10 border-b sm:border-b-0">
+
+        <p class="font-heading font-bold text-dreizack-dark text-[15px] mb-1">
+          Engineered Solutions
+        </p>
+
+        <p class="text-[#5a655f] text-[13.5px] leading-relaxed">
+          Cost-effective and technically advanced solutions for modern construction.
+        </p>
+
+      </div>
+
+
+      <!-- Feature 3 -->
+      <div class="py-5 sm:pl-6">
+
+        <p class="font-heading font-bold text-dreizack-dark text-[15px] mb-1">
+          Trusted Partnerships
+        </p>
+
+        <p class="text-[#5a655f] text-[13.5px] leading-relaxed">
+          Strong collaboration with technology and manufacturing partners.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+  </div>
+
+</section>
+
+
+
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="relative">
   <div class="max-w-[1240px] mx-auto px-6 sm:px-8 py-16 lg:py-24">
  
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+    <div class="max-w-xl mb-14 lg:mb-16">
+      <p class="text-dreizack-green text-[13px] font-heading font-bold tracking-wide uppercase mb-3">Why Choose Us</p>
+      <h2 class="font-heading font-extrabold text-dreizack-dark text-[32px] sm:text-[40px] leading-[1.1]">
+        Built on precision, backed by people who show up
+      </h2>
+    </div>
  
-      <!-- Image side -->
-      <div class="lg:col-span-5 relative">
-        <!-- offset structural block, echoes a tie-plate corner bracket -->
-        <div class="absolute -top-5 -left-5 w-full h-full bg-dreizack-green hidden sm:block" aria-hidden="true"></div>
-        <div class="relative aspect-[4/5] sm:aspect-[4/5] w-full overflow-hidden shadow-xl">
-          <img
-            src="./assets/banner1.webp"
-            onerror="this.onerror=null;this.src='https://picsum.photos/id/1073/900/1100';"
-            alt="Dreizack tie-plate system installed on a vertical construction formwork panel"
-            class="w-full h-full object-cover">
-          <!-- corner accent tag -->
-          <div class="absolute bottom-0 left-0 bg-dreizack-dark px-5 py-3 flex items-center gap-2">
-            <span class="w-2 h-2 bg-dreizack-gold" aria-hidden="true"></span>
-            <span class="text-white text-[13px] font-heading font-semibold tracking-wide uppercase">Flagship Product</span>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-14 lg:gap-x-14 lg:gap-y-16">
+ 
+      <!-- Manufacturing Excellence -->
+      <div class="why-card flex flex-col">
+        <div class="relative w-16 h-16 mb-6">
+          <div class="why-offset absolute -top-2 -left-2 w-16 h-16 bg-dreizack-green" aria-hidden="true"></div>
+          <div class="relative w-16 h-16 bg-dreizack-dark flex items-center justify-center">
+            <svg class="w-7 h-7 text-dreizack-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21V10l6 4V10l6 4V10l6 4v7Z"></path>
+              <path d="M3 21h18"></path>
+              <circle cx="18" cy="6" r="2"></circle>
+            </svg>
           </div>
         </div>
+        <h3 class="font-heading font-bold text-dreizack-dark text-[19px] mb-2.5">Manufacturing Excellence</h3>
+        <p class="text-[#5a655f] text-[14.5px] leading-relaxed max-w-sm">
+          Backed by advanced machinery and stringent quality controls, our production facilities
+          are designed to deliver high-precision, durable, and reliable formwork systems that meet
+          global standards.
+        </p>
       </div>
  
-      <!-- Content side -->
-      <div class="lg:col-span-7">
-        <p class="text-dreizack-green text-[13px] font-heading font-bold tracking-wide uppercase mb-3">About Dreizack</p>
-        <h2 class="font-heading font-extrabold text-dreizack-dark text-[32px] sm:text-[40px] lg:text-[46px] leading-[1.1] mb-6 max-w-xl">
-          The Tie-Plate System, built for how vertical construction actually works
-        </h2>
- 
-        <div class="space-y-4 max-w-xl text-[#3d4a44] text-[15.5px] leading-relaxed">
-          <p>
-            Our tie-plate system is widely accepted across the construction industry and is best
-            suited for vertical construction methods — engineered to hold formwork exactly where
-            it needs to be, panel after panel, pour after pour.
-          </p>
-          <p>
-            It performs equally well on podium levels and on the super structure above,
-            so one system carries a project from foundation to roof without switching gear
-            mid-build.
-          </p>
-        </div>
- 
-        <!-- feature strip -->
-        <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 border-t border-dreizack-dark/10">
-          <div class="py-5 sm:pr-6 sm:border-r border-dreizack-dark/10 border-b sm:border-b-0">
-            <p class="font-heading font-bold text-dreizack-dark text-[15px] mb-1">Vertical construction</p>
-            <p class="text-[#5a655f] text-[13.5px] leading-relaxed">Purpose-built for vertical pour sequences.</p>
-          </div>
-          <div class="py-5 sm:px-6 sm:border-r border-dreizack-dark/10 border-b sm:border-b-0">
-            <p class="font-heading font-bold text-dreizack-dark text-[15px] mb-1">Podium &amp; superstructure</p>
-            <p class="text-[#5a655f] text-[13.5px] leading-relaxed">One system, from podium level to the top floor.</p>
-          </div>
-          <div class="py-5 sm:pl-6">
-            <p class="font-heading font-bold text-dreizack-dark text-[15px] mb-1">Hassle-free execution</p>
-            <p class="text-[#5a655f] text-[13.5px] leading-relaxed">Accessories on hand for the cleanest form finishes.</p>
+      <!-- End-to-End Support -->
+      <div class="why-card flex flex-col">
+        <div class="relative w-16 h-16 mb-6">
+          <div class="why-offset absolute -top-2 -left-2 w-16 h-16 bg-dreizack-gold" aria-hidden="true"></div>
+          <div class="relative w-16 h-16 bg-dreizack-dark flex items-center justify-center">
+            <svg class="w-7 h-7 text-dreizack-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 12h.01"></path>
+              <path d="M12 12h.01"></path>
+              <path d="M16 12h.01"></path>
+              <path d="M21 12a9 9 0 1 1-4.2-7.6"></path>
+              <path d="M21 3v6h-6"></path>
+            </svg>
           </div>
         </div>
+        <h3 class="font-heading font-bold text-dreizack-dark text-[19px] mb-2.5">End-to-End Support</h3>
+        <p class="text-[#5a655f] text-[14.5px] leading-relaxed max-w-sm">
+          From initial design consultation to on-site technical assistance and post-sales
+          coordination, we partner with you at every stage of the project — ensuring smooth
+          execution and complete peace of mind.
+        </p>
+      </div>
+ 
+      <!-- Experienced Team -->
+      <div class="why-card flex flex-col">
+        <div class="relative w-16 h-16 mb-6">
+          <div class="why-offset absolute -top-2 -left-2 w-16 h-16 bg-dreizack-lime" aria-hidden="true"></div>
+          <div class="relative w-16 h-16 bg-dreizack-dark flex items-center justify-center">
+            <svg class="w-7 h-7 text-dreizack-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="8" r="3.2"></circle>
+              <path d="M3.5 20c0-3.3 2.5-6 6-6s6 2.7 6 6"></path>
+              <circle cx="17" cy="8.5" r="2.6"></circle>
+              <path d="M15.5 12.2c2.6.3 4.5 2.4 4.5 5.8"></path>
+            </svg>
+          </div>
+        </div>
+        <h3 class="font-heading font-bold text-dreizack-dark text-[19px] mb-2.5">Experienced Team</h3>
+        <p class="text-[#5a655f] text-[14.5px] leading-relaxed max-w-sm">
+          Our team consists of seasoned industry veterans who bring deep expertise, practical
+          insight, and a solution-oriented mindset to every project.
+        </p>
+      </div>
+ 
+      <!-- Long Lifecycle -->
+      <div class="why-card flex flex-col">
+        <div class="relative w-16 h-16 mb-6">
+          <div class="why-offset absolute -top-2 -left-2 w-16 h-16 bg-dreizack-orange" aria-hidden="true"></div>
+          <div class="relative w-16 h-16 bg-dreizack-dark flex items-center justify-center">
+            <svg class="w-7 h-7 text-dreizack-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 2l4 4-4 4"></path>
+              <path d="M21 6H8a5 5 0 0 0 0 10h1"></path>
+              <path d="M7 22l-4-4 4-4"></path>
+              <path d="M3 18h13a5 5 0 0 0 0-10h-1"></path>
+            </svg>
+          </div>
+        </div>
+        <h3 class="font-heading font-bold text-dreizack-dark text-[19px] mb-2.5">Long Lifecycle</h3>
+        <p class="text-[#5a655f] text-[14.5px] leading-relaxed max-w-sm">
+          MDFS formwork systems are engineered for reusability and built to last. With a
+          high-quality finish and robust build, our products ensure lower long-term costs and
+          better construction outcomes.
+        </p>
       </div>
  
     </div>
