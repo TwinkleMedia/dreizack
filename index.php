@@ -82,7 +82,7 @@
 
         <span
           class="text-white text-[13px] font-heading font-semibold tracking-wide uppercase">
-          MDFS Aluminium Formwork
+         Dreizack Aluminium Formwork
         </span>
 
       </div>
@@ -97,7 +97,7 @@
 
     <!-- Small Heading -->
     <p class="text-dreizack-green text-[13px] font-heading font-bold tracking-wide uppercase mb-3">
-      About MDFS
+      About Dreizack Formwork Solutions
     </p>
 
 
