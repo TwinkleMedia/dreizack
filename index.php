@@ -282,107 +282,112 @@
   </div>
 </section>
 
-
-<!-- ============ APPLICATIONS ============ -->
+<!-- ============ PRODUCTS ============ -->
 <section class="relative">
   <div class="max-w-[1240px] mx-auto px-6 sm:px-8 py-16 lg:py-24">
 
     <div class="max-w-xl mb-12 lg:mb-14">
-      <p class="text-dreizack-green text-[13px] font-heading font-bold tracking-wide uppercase mb-3">Applications</p>
+      <p class="text-dreizack-green text-[13px] font-heading font-bold tracking-wide uppercase mb-3">Products</p>
       <h2 class="font-heading font-extrabold text-dreizack-dark text-[32px] sm:text-[40px] leading-[1.1] mb-4">
-        Where the tie-plate system goes to work
+        Engineered systems built for the site
       </h2>
       <p class="text-[#3d4a44] text-[15.5px] leading-relaxed">
-        One system, engineered to hold its line across every vertical element on site —
-        from core walls to the smallest column.
+        Two core products, engineered to hold their line across every vertical
+        element on site — from core walls to the smallest column.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10">
 
-      <!-- Card: Shear Walls -->
-      <a href="./application-shear-walls.html" class="app-card group block">
+      <!-- Card: Aluminium Formwork -->
+      <a href="./product-aluminium-formwork.html" class="app-card group block">
         <div class="relative aspect-[4/3] overflow-hidden">
-          <img src="./assets/app1.jpg"
+          <img src="./assets/product1.jpg"
                onerror="this.onerror=null;this.src='https://picsum.photos/id/1076/700/560';"
-               alt="Shear wall formwork application" class="app-img w-full h-full object-cover transition-transform duration-500">
+               alt="Aluminium Formwork product" class="app-img w-full h-full object-cover transition-transform duration-500">
           <div class="absolute inset-0 bg-gradient-to-t from-dreizack-dark/70 via-dreizack-dark/0 to-transparent"></div>
           <div class="app-arrow absolute bottom-0 right-0 w-12 h-12 bg-dreizack-green flex items-center justify-center transition-colors duration-200">
             <svg class="w-5 h-5 text-white transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
           </div>
         </div>
         <div class="pt-4 flex items-center justify-between border-b border-dreizack-dark/10 pb-4">
-          <h3 class="font-heading font-bold text-dreizack-dark text-[17px]">Shear Walls</h3>
+          <h3 class="font-heading font-bold text-dreizack-dark text-[17px]">Aluminium Formwork</h3>
         </div>
       </a>
 
-      <!-- Card: Retaining Walls -->
-      <a href="./application-retaining-walls.html" class="app-card group block">
+      <!-- Card: Safety Screen -->
+      <a href="./product-safety-screen.html" class="app-card group block">
         <div class="relative aspect-[4/3] overflow-hidden">
-          <img src="./assets/app2.jpg"
+          <img src="./assets/product2.jpg"
                onerror="this.onerror=null;this.src='https://picsum.photos/id/1080/700/560';"
-               alt="Retaining wall formwork application" class="app-img w-full h-full object-cover transition-transform duration-500">
+               alt="Safety Screen product" class="app-img w-full h-full object-cover transition-transform duration-500">
           <div class="absolute inset-0 bg-gradient-to-t from-dreizack-dark/70 via-dreizack-dark/0 to-transparent"></div>
           <div class="app-arrow absolute bottom-0 right-0 w-12 h-12 bg-dreizack-green flex items-center justify-center transition-colors duration-200">
             <svg class="w-5 h-5 text-white transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
           </div>
         </div>
         <div class="pt-4 flex items-center justify-between border-b border-dreizack-dark/10 pb-4">
-          <h3 class="font-heading font-bold text-dreizack-dark text-[17px]">Retaining Walls</h3>
-        </div>
-      </a>
-
-      <!-- Card: Lift-core Walls -->
-      <a href="./application-lift-core-walls.html" class="app-card group block">
-        <div class="relative aspect-[4/3] overflow-hidden">
-          <img src="./assets/app3.jpg"
-               onerror="this.onerror=null;this.src='https://picsum.photos/id/1078/700/560';"
-               alt="Lift-core wall formwork application" class="app-img w-full h-full object-cover transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-dreizack-dark/70 via-dreizack-dark/0 to-transparent"></div>
-          <div class="app-arrow absolute bottom-0 right-0 w-12 h-12 bg-dreizack-green flex items-center justify-center transition-colors duration-200">
-            <svg class="w-5 h-5 text-white transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-          </div>
-        </div>
-        <div class="pt-4 flex items-center justify-between border-b border-dreizack-dark/10 pb-4">
-          <h3 class="font-heading font-bold text-dreizack-dark text-[17px]">Lift-Core Walls</h3>
-        </div>
-      </a>
-
-      <!-- Card: Rectangular / Round Columns -->
-      <a href="./application-columns.html" class="app-card group block">
-        <div class="relative aspect-[4/3] overflow-hidden">
-          <img src="./assets/app4.jpg"
-               onerror="this.onerror=null;this.src='https://picsum.photos/id/1082/700/560';"
-               alt="Rectangular and round column formwork application" class="app-img w-full h-full object-cover transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-dreizack-dark/70 via-dreizack-dark/0 to-transparent"></div>
-          <div class="app-arrow absolute bottom-0 right-0 w-12 h-12 bg-dreizack-green flex items-center justify-center transition-colors duration-200">
-            <svg class="w-5 h-5 text-white transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-          </div>
-        </div>
-        <div class="pt-4 flex items-center justify-between border-b border-dreizack-dark/10 pb-4">
-          <h3 class="font-heading font-bold text-dreizack-dark text-[17px]">Rectangular / Round Columns</h3>
-        </div>
-      </a>
-
-      <!-- Card: Staircase -->
-      <a href="./application-staircase.html" class="app-card group block">
-        <div class="relative aspect-[4/3] overflow-hidden">
-          <img src="./assets/app5.jpg"
-               onerror="this.onerror=null;this.src='https://picsum.photos/id/1084/700/560';"
-               alt="Staircase formwork application" class="app-img w-full h-full object-cover transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-dreizack-dark/70 via-dreizack-dark/0 to-transparent"></div>
-          <div class="app-arrow absolute bottom-0 right-0 w-12 h-12 bg-dreizack-green flex items-center justify-center transition-colors duration-200">
-            <svg class="w-5 h-5 text-white transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-          </div>
-        </div>
-        <div class="pt-4 flex items-center justify-between border-b border-dreizack-dark/10 pb-4">
-          <h3 class="font-heading font-bold text-dreizack-dark text-[17px]">Staircase</h3>
+          <h3 class="font-heading font-bold text-dreizack-dark text-[17px]">Safety Screen</h3>
         </div>
       </a>
 
     </div>
   </div>
 </section>
+
+<!-- ============ SERVICES ============ -->
+<section class="relative bg-[#f7f8f6]">
+  <div class="max-w-[1240px] mx-auto px-6 sm:px-8 py-16 lg:py-24">
+
+    <div class="max-w-xl mb-12 lg:mb-14">
+      <p class="text-dreizack-green text-[13px] font-heading font-bold tracking-wide uppercase mb-3">Services</p>
+      <h2 class="font-heading font-extrabold text-dreizack-dark text-[32px] sm:text-[40px] leading-[1.1] mb-4">
+        Support that goes beyond the system
+      </h2>
+      <p class="text-[#3d4a44] text-[15.5px] leading-relaxed">
+        From extending the life of your existing formwork to reshaping it
+        for a new project, our team stays involved long after installation.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10">
+
+      <!-- Card: Refurbishment Program -->
+      <a href="./service-refurbishment-program.html" class="app-card group block">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="./assets/service1.jpg"
+               onerror="this.onerror=null;this.src='https://picsum.photos/id/1076/700/560';"
+               alt="Refurbishment Program service" class="app-img w-full h-full object-cover transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-dreizack-dark/70 via-dreizack-dark/0 to-transparent"></div>
+          <div class="app-arrow absolute bottom-0 right-0 w-12 h-12 bg-dreizack-green flex items-center justify-center transition-colors duration-200">
+            <svg class="w-5 h-5 text-white transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </div>
+        </div>
+        <div class="pt-4 flex items-center justify-between border-b border-dreizack-dark/10 pb-4">
+          <h3 class="font-heading font-bold text-dreizack-dark text-[17px]">Refurbishment Program</h3>
+        </div>
+      </a>
+
+      <!-- Card: Formwork Re-designing -->
+      <a href="./service-formwork-redesigning.html" class="app-card group block">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="./assets/service2.jpg"
+               onerror="this.onerror=null;this.src='https://picsum.photos/id/1080/700/560';"
+               alt="Formwork Re-designing service" class="app-img w-full h-full object-cover transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-dreizack-dark/70 via-dreizack-dark/0 to-transparent"></div>
+          <div class="app-arrow absolute bottom-0 right-0 w-12 h-12 bg-dreizack-green flex items-center justify-center transition-colors duration-200">
+            <svg class="w-5 h-5 text-white transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </div>
+        </div>
+        <div class="pt-4 flex items-center justify-between border-b border-dreizack-dark/10 pb-4">
+          <h3 class="font-heading font-bold text-dreizack-dark text-[17px]">Formwork Re-designing</h3>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- ============ MANUFACTURING PROCESS ============ -->
 <section class="relative bg-dreizack-dark">

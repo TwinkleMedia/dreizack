@@ -44,12 +44,10 @@
          <img src="./assets/footerLogo2.png" alt="Dreizack logo" class="h-44 sm:h-52 w-auto shrink-0">
         </a>
 
-
         <!-- About Us -->
         <p class="text-white/65 text-[14.5px] leading-relaxed max-w-md">
           Dreizack Formwork Solutions LLP designs, manufactures, and delivers reliable formwork systems engineered for speed, safety, and precision on every project site.
         </p>
-
 
         <!-- Social links -->
         <div class="flex items-center gap-3 mt-2">
@@ -75,10 +73,24 @@
       <!-- Navigation -->
       <div class="flex flex-col gap-3">
         <h3 class="font-heading font-bold text-white text-[15px] tracking-wide uppercase mb-1">Navigation</h3>
-        <a href="#" class="text-white/65 hover:text-dreizack-gold text-[14.5px] transition-colors w-fit">Home</a>
-        <a href="#" class="text-white/65 hover:text-dreizack-gold text-[14.5px] transition-colors w-fit">About Us</a>
-        <a href="#" class="text-white/65 hover:text-dreizack-gold text-[14.5px] transition-colors w-fit">Services</a>
-        <a href="#" class="text-white/65 hover:text-dreizack-gold text-[14.5px] transition-colors w-fit">Contact Us</a>
+        <a href="./index.php" class="text-white/65 hover:text-dreizack-gold text-[14.5px] transition-colors w-fit">Home</a>
+        <a href="./aboutus.php" class="text-white/65 hover:text-dreizack-gold text-[14.5px] transition-colors w-fit">About Us</a>
+
+        <!-- Products -->
+        <div class="flex flex-col gap-2 mt-1">
+          <span class="text-white/85 font-heading font-semibold text-[14.5px]">Products</span>
+          <a href="./product-aluminium-formwork.html" class="text-white/65 hover:text-dreizack-gold text-[14px] transition-colors w-fit pl-3">Aluminium Formwork</a>
+          <a href="./product-safety-screen.html" class="text-white/65 hover:text-dreizack-gold text-[14px] transition-colors w-fit pl-3">Safety Screen</a>
+        </div>
+
+        <!-- Services -->
+        <div class="flex flex-col gap-2 mt-1">
+          <span class="text-white/85 font-heading font-semibold text-[14.5px]">Services</span>
+          <a href="./service-refurbishment-program.html" class="text-white/65 hover:text-dreizack-gold text-[14px] transition-colors w-fit pl-3">Refurbishment Program</a>
+          <a href="./service-formwork-redesigning.html" class="text-white/65 hover:text-dreizack-gold text-[14px] transition-colors w-fit pl-3">Formwork Re-designing</a>
+        </div>
+
+        <a href="#" class="text-white/65 hover:text-dreizack-gold text-[14.5px] transition-colors w-fit mt-1">Contact Us</a>
       </div>
 
       <!-- Contact -->
@@ -118,6 +130,5 @@
 
   </div>
 </footer>
-
 </body>
 </html>
