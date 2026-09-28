@@ -5,6 +5,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>About Us - Hero Section</title>
 <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- ============ ANIMATIONS (CSS) ============ -->
+<style>
+  /* Scroll progress bar */
+  #scrollProgress {
+    position: fixed; top: 0; left: 0; height: 3px; width: 100%;
+    background: #f5b800; /* swap for your dreizack-gold */
+    transform-origin: 0 50%; transform: scaleX(0);
+    z-index: 60; pointer-events: none;
+  }
+
+  /* Hero: title and breadcrumb rise in on page load; overlay fades from lighter to final tone */
+  .hero-rise { animation: heroRise .9s cubic-bezier(.2,.7,.2,1) both; animation-delay: var(--hd, 0ms); }
+  @keyframes heroRise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+  .hero-overlay { animation: heroOverlay 1.2s ease-out both; }
+  @keyframes heroOverlay { from { opacity: 0; } to { opacity: 1; } }
+  .hero-bar { transform-origin: 50% 50%; animation: heroBar .8s cubic-bezier(.2,.7,.2,1) .55s both; }
+  @keyframes heroBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+  /* Scroll reveals (uses `translate` so Tailwind hover transforms are untouched) */
+  .js-anim .reveal {
+    opacity: 0;
+    translate: 0 28px;
+    transition: opacity .7s cubic-bezier(.2,.7,.2,1) var(--d, 0ms),
+                translate .7s cubic-bezier(.2,.7,.2,1) var(--d, 0ms);
+  }
+  .js-anim .reveal.from-left  { translate: -36px 0; }
+  .js-anim .reveal.from-right { translate: 36px 0; }
+  .js-anim .reveal.in { opacity: 1; translate: 0 0; }
+
+  /* About: green offset block slides out from behind the photo */
+  .js-anim .about-block { translate: 20px 20px; opacity: 0; transition: translate .9s cubic-bezier(.2,.7,.2,1) .25s, opacity .6s ease .25s; }
+  .js-anim .about-block.in { translate: 0 0; opacity: 1; }
+
+  /* Respect "reduce motion" */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-rise, .hero-overlay, .hero-bar { animation: none; }
+    .js-anim .reveal, .js-anim .about-block {
+      opacity: 1 !important; translate: none !important; transition: none !important;
+    }
+  }
+</style>
 </head>
 <body class="bg-white">
 
@@ -18,15 +60,17 @@ include "./navbar.php"
     style="background-image: url('https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=1920&auto=format&fit=crop');"
   >
     <!-- Dark overlay -->
-    <div class="absolute inset-0 bg-slate-900/60"></div>
+    <div class="hero-overlay absolute inset-0 bg-slate-900/60"></div>
 
     <!-- Content -->
     <div class="relative z-10 text-center px-4 sm:px-6">
-      <h1 class="text-white font-extrabold tracking-wide text-3xl sm:text-4xl md:text-5xl">
+      <h1 class="hero-rise text-white font-extrabold tracking-wide text-3xl sm:text-4xl md:text-5xl" style="--hd:150ms">
         About Us
       </h1>
 
-      <div class="mt-3 sm:mt-4 flex items-center justify-center gap-2 text-sm sm:text-base text-white/90">
+      <div class="hero-bar mx-auto mt-3 h-[3px] w-14 bg-dreizack-gold" aria-hidden="true"></div>
+
+      <div class="hero-rise mt-3 sm:mt-4 flex items-center justify-center gap-2 text-sm sm:text-base text-white/90" style="--hd:400ms">
         <a href="#" class="flex items-center gap-1.5 hover:text-white transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 sm:w-5 sm:h-5">
             <path d="M11.47 3.84a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.06l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.69Z" />
@@ -393,6 +437,77 @@ include "./navbar.php"
 include "./footer.php"
 ?>
 
+<!-- ============ ANIMATIONS (JS) ============ -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+  /* 1. Scroll progress bar */
+  const bar = document.createElement('div');
+  bar.id = 'scrollProgress';
+  document.body.appendChild(bar);
+  const onScroll = () => {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`;
+  };
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  if (reduce) return;
+  document.documentElement.classList.add('js-anim');
+
+  /* 2. Choose what reveals, and in what order */
+  const reveal = (els, cls = '', step = 90) =>
+    els.forEach((el, i) => {
+      el.classList.add('reveal');
+      cls.split(' ').filter(Boolean).forEach(c => el.classList.add(c));
+      el.style.setProperty('--d', `${i * step}ms`);
+    });
+
+  // About: photo from left, text staggered, offset block slides out
+  const about = document.getElementById('about');
+  if (about) {
+    const img = about.querySelector('.lg\\:col-span-5');
+    const txt = about.querySelector('.lg\\:col-span-7');
+    if (img) reveal([img], 'from-left');
+    if (txt) {
+      const strip = txt.querySelector('.mt-10');
+      reveal([...txt.children].filter(c => c !== strip), '', 110);
+      if (strip) reveal([...strip.children], '', 120);
+    }
+    const block = about.querySelector('.bg-dreizack-green.absolute');
+    if (block) block.classList.add('about-block');
+  }
+
+  // Card groups: stagger within each grid
+  ['.why-card', '.feat-card'].forEach(sel => {
+    const groups = new Map();
+    $$(sel).forEach(el => {
+      if (!groups.has(el.parentElement)) groups.set(el.parentElement, []);
+      groups.get(el.parentElement).push(el);
+    });
+    groups.forEach(list => reveal(list, '', 110));
+  });
+
+  /* 3. Trigger on scroll; clean up afterwards so your hover styles take over */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      el.classList.add('in');
+      io.unobserve(el);
+      const delay = parseFloat(el.style.getPropertyValue('--d')) || 0;
+      setTimeout(() => {
+        el.classList.remove('reveal', 'from-left', 'from-right', 'about-block', 'in');
+        el.style.removeProperty('--d');
+      }, delay + 1100);
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+
+  $$('.reveal, .about-block').forEach(el => io.observe(el));
+});
+</script>
 
 </body>
 </html>

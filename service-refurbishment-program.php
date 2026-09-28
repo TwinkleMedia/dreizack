@@ -31,6 +31,49 @@ tailwind.config = {
   },
 };
 </script>
+
+<!-- ============ ANIMATIONS (CSS) ============ -->
+<style>
+  /* Scroll progress bar */
+  #scrollProgress {
+    position: fixed; top: 0; left: 0; height: 3px; width: 100%;
+    background: #FFCC29;
+    transform-origin: 0 50%; transform: scaleX(0);
+    z-index: 60; pointer-events: none;
+  }
+
+  /* Hero: background eases in, text rises in one after another on page load.
+     (Rise is applied to wrappers, not the buttons, so button hover lift keeps working.) */
+  .hero-zoom { animation: heroZoom 9s ease-out both; }
+  @keyframes heroZoom { from { transform: scale(1.12); } to { transform: scale(1); } }
+  .hero-rise { animation: heroRise .9s cubic-bezier(.2,.7,.2,1) both; animation-delay: var(--hd, 0ms); }
+  @keyframes heroRise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+  /* Scroll reveals (uses `translate`/`scale` so Tailwind hover transforms are untouched) */
+  .js-anim .reveal {
+    opacity: 0;
+    translate: 0 28px;
+    transition: opacity .7s cubic-bezier(.2,.7,.2,1) var(--d, 0ms),
+                translate .7s cubic-bezier(.2,.7,.2,1) var(--d, 0ms),
+                scale .7s cubic-bezier(.2,.7,.2,1) var(--d, 0ms);
+  }
+  .js-anim .reveal.from-left  { translate: -36px 0; }
+  .js-anim .reveal.from-right { translate: 36px 0; }
+  .js-anim .reveal.pop        { translate: 0 14px; scale: .9; }
+  .js-anim .reveal.in { opacity: 1; translate: 0 0; scale: 1; }
+
+  /* Icons: small pop after their card lands */
+  .js-anim .icon-pop { scale: .6; transition: scale .5s cubic-bezier(.3,1.6,.5,1) calc(var(--d, 0ms) + 250ms); }
+  .js-anim .in .icon-pop { scale: 1; }
+
+  /* Respect "reduce motion" */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-zoom, .hero-rise { animation: none; }
+    .js-anim .reveal, .js-anim .icon-pop {
+      opacity: 1 !important; translate: none !important; scale: 1 !important; transition: none !important;
+    }
+  }
+</style>
 </head>
 
 <body class="font-body bg-[#FAFAF7]">
@@ -39,16 +82,16 @@ tailwind.config = {
 
 <!-- ============ HERO ============ -->
 <section class="relative overflow-hidden bg-dreizack-dark">
-  <div class="absolute inset-0">
+  <div class="absolute inset-0 overflow-hidden">
     <img src="./assets/service-refurbishment-hero.jpg"
          onerror="this.onerror=null;this.src='https://picsum.photos/id/1076/1600/900';"
          alt="Formwork refurbishment service"
-         class="w-full h-full object-cover opacity-30">
+         class="hero-zoom w-full h-full object-cover opacity-30">
     <div class="absolute inset-0 bg-gradient-to-r from-dreizack-dark via-dreizack-dark/85 to-dreizack-dark/40"></div>
   </div>
 
   <div class="relative max-w-[1240px] mx-auto px-6 sm:px-8 pt-20 pb-24 lg:pt-28 lg:pb-32">
-    <nav class="flex items-center gap-2 text-[13.5px] font-heading font-semibold text-white/60 mb-6">
+    <nav class="hero-rise flex items-center gap-2 text-[13.5px] font-heading font-semibold text-white/60 mb-6" style="--hd:100ms">
       <a href="./index.php" class="hover:text-dreizack-gold transition-colors">Home</a>
       <span>/</span>
       <span class="text-white/40">Services</span>
@@ -56,20 +99,20 @@ tailwind.config = {
       <span class="text-dreizack-gold">Refurbishment Program</span>
     </nav>
 
-    <p class="text-dreizack-gold text-[13px] font-heading font-bold tracking-wide uppercase mb-4">
+    <p class="hero-rise text-dreizack-gold text-[13px] font-heading font-bold tracking-wide uppercase mb-4" style="--hd:220ms">
       Service
     </p>
 
-    <h1 class="font-heading font-extrabold text-white text-[36px] sm:text-[52px] leading-[1.08] max-w-3xl mb-6">
+    <h1 class="hero-rise font-heading font-extrabold text-white text-[36px] sm:text-[52px] leading-[1.08] max-w-3xl mb-6" style="--hd:340ms">
       Refurbishment Program
     </h1>
 
-    <p class="text-white/75 text-[16px] sm:text-[17px] leading-relaxed max-w-xl mb-9">
+    <p class="hero-rise text-white/75 text-[16px] sm:text-[17px] leading-relaxed max-w-xl mb-9" style="--hd:480ms">
       Extend the working life of your formwork with a structured refurbishment
       program focused on inspection, restoration, repair and reliable reuse.
     </p>
 
-    <div class="flex flex-wrap items-center gap-4">
+    <div class="hero-rise flex flex-wrap items-center gap-4" style="--hd:640ms">
       <a href="#enquire"
          class="inline-flex items-center gap-2 font-heading font-bold text-[14.5px] text-white px-7 py-3.5 rounded-lg
                 bg-gradient-to-br from-dreizack-green to-dreizack-lime
@@ -98,7 +141,7 @@ tailwind.config = {
   <div class="max-w-[1240px] mx-auto px-6 sm:px-8 py-16 lg:py-24">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-      <div>
+      <div class="ov-text">
         <p class="text-dreizack-green text-[13px] font-heading font-bold tracking-wide uppercase mb-3">
           Overview
         </p>
@@ -120,7 +163,7 @@ tailwind.config = {
           across repeated projects.
         </p>
 
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+        <div class="ov-stats grid grid-cols-2 sm:grid-cols-4 gap-6">
           <div>
             <p class="font-heading font-extrabold text-dreizack-dark text-[28px]">01</p>
             <p class="text-[#5a655f] text-[13px]">Inspect</p>
@@ -140,7 +183,7 @@ tailwind.config = {
         </div>
       </div>
 
-      <div class="relative aspect-[4/3] rounded-2xl overflow-hidden">
+      <div class="ov-img relative aspect-[4/3] rounded-2xl overflow-hidden">
         <img src="./assets/service-refurbishment-overview.jpg"
              onerror="this.onerror=null;this.src='https://picsum.photos/id/1078/800/600';"
              alt="Formwork refurbishment"
@@ -155,7 +198,7 @@ tailwind.config = {
 <section class="relative bg-[#f7f8f6]">
   <div class="max-w-[1240px] mx-auto px-6 sm:px-8 py-16 lg:py-24">
 
-    <div class="max-w-xl mb-12 lg:mb-14">
+    <div class="sec-head max-w-xl mb-12 lg:mb-14">
       <p class="text-dreizack-green text-[13px] font-heading font-bold tracking-wide uppercase mb-3">
         What We Do
       </p>
@@ -168,10 +211,10 @@ tailwind.config = {
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- Card 1 -->
-      <div class="group relative flex flex-col p-7 bg-white border border-dreizack-dark/10 rounded-2xl
+      <div class="feat-card group relative flex flex-col p-7 bg-white border border-dreizack-dark/10 rounded-2xl
                   hover:border-dreizack-green/40 hover:shadow-[0_20px_40px_-20px_rgba(0,72,45,0.25)]
                   hover:-translate-y-1.5 transition-all duration-300">
-        <div class="w-14 h-14 mb-6 rounded-xl bg-dreizack-dark flex items-center justify-center
+        <div class="icon-pop w-14 h-14 mb-6 rounded-xl bg-dreizack-dark flex items-center justify-center
                     group-hover:bg-dreizack-green transition-colors duration-300">
           <svg class="w-6 h-6 text-dreizack-gold" viewBox="0 0 24 24" fill="none"
                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -189,10 +232,10 @@ tailwind.config = {
       </div>
 
       <!-- Card 2 -->
-      <div class="group relative flex flex-col p-7 bg-white border border-dreizack-dark/10 rounded-2xl
+      <div class="feat-card group relative flex flex-col p-7 bg-white border border-dreizack-dark/10 rounded-2xl
                   hover:border-dreizack-green/40 hover:shadow-[0_20px_40px_-20px_rgba(0,72,45,0.25)]
                   hover:-translate-y-1.5 transition-all duration-300">
-        <div class="w-14 h-14 mb-6 rounded-xl bg-dreizack-dark flex items-center justify-center
+        <div class="icon-pop w-14 h-14 mb-6 rounded-xl bg-dreizack-dark flex items-center justify-center
                     group-hover:bg-dreizack-green transition-colors duration-300">
           <svg class="w-6 h-6 text-dreizack-gold" viewBox="0 0 24 24" fill="none"
                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -211,10 +254,10 @@ tailwind.config = {
       </div>
 
       <!-- Card 3 -->
-      <div class="group relative flex flex-col p-7 bg-white border border-dreizack-dark/10 rounded-2xl
+      <div class="feat-card group relative flex flex-col p-7 bg-white border border-dreizack-dark/10 rounded-2xl
                   hover:border-dreizack-green/40 hover:shadow-[0_20px_40px_-20px_rgba(0,72,45,0.25)]
                   hover:-translate-y-1.5 transition-all duration-300">
-        <div class="w-14 h-14 mb-6 rounded-xl bg-dreizack-dark flex items-center justify-center
+        <div class="icon-pop w-14 h-14 mb-6 rounded-xl bg-dreizack-dark flex items-center justify-center
                     group-hover:bg-dreizack-green transition-colors duration-300">
           <svg class="w-6 h-6 text-dreizack-gold" viewBox="0 0 24 24" fill="none"
                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -231,10 +274,10 @@ tailwind.config = {
       </div>
 
       <!-- Card 4 -->
-      <div class="group relative flex flex-col p-7 bg-white border border-dreizack-dark/10 rounded-2xl
+      <div class="feat-card group relative flex flex-col p-7 bg-white border border-dreizack-dark/10 rounded-2xl
                   hover:border-dreizack-green/40 hover:shadow-[0_20px_40px_-20px_rgba(0,72,45,0.25)]
                   hover:-translate-y-1.5 transition-all duration-300">
-        <div class="w-14 h-14 mb-6 rounded-xl bg-dreizack-dark flex items-center justify-center
+        <div class="icon-pop w-14 h-14 mb-6 rounded-xl bg-dreizack-dark flex items-center justify-center
                     group-hover:bg-dreizack-green transition-colors duration-300">
           <svg class="w-6 h-6 text-dreizack-gold" viewBox="0 0 24 24" fill="none"
                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -254,10 +297,10 @@ tailwind.config = {
       </div>
 
       <!-- Card 5 -->
-      <div class="group relative flex flex-col p-7 bg-white border border-dreizack-dark/10 rounded-2xl
+      <div class="feat-card group relative flex flex-col p-7 bg-white border border-dreizack-dark/10 rounded-2xl
                   hover:border-dreizack-green/40 hover:shadow-[0_20px_40px_-20px_rgba(0,72,45,0.25)]
                   hover:-translate-y-1.5 transition-all duration-300">
-        <div class="w-14 h-14 mb-6 rounded-xl bg-dreizack-dark flex items-center justify-center
+        <div class="icon-pop w-14 h-14 mb-6 rounded-xl bg-dreizack-dark flex items-center justify-center
                     group-hover:bg-dreizack-green transition-colors duration-300">
           <svg class="w-6 h-6 text-dreizack-gold" viewBox="0 0 24 24" fill="none"
                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -277,10 +320,10 @@ tailwind.config = {
       </div>
 
       <!-- Card 6 -->
-      <div class="group relative flex flex-col p-7 bg-white border border-dreizack-dark/10 rounded-2xl
+      <div class="feat-card group relative flex flex-col p-7 bg-white border border-dreizack-dark/10 rounded-2xl
                   hover:border-dreizack-green/40 hover:shadow-[0_20px_40px_-20px_rgba(0,72,45,0.25)]
                   hover:-translate-y-1.5 transition-all duration-300">
-        <div class="w-14 h-14 mb-6 rounded-xl bg-dreizack-dark flex items-center justify-center
+        <div class="icon-pop w-14 h-14 mb-6 rounded-xl bg-dreizack-dark flex items-center justify-center
                     group-hover:bg-dreizack-green transition-colors duration-300">
           <svg class="w-6 h-6 text-dreizack-gold" viewBox="0 0 24 24" fill="none"
                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -305,7 +348,7 @@ tailwind.config = {
 <section id="process" class="relative">
   <div class="max-w-[1240px] mx-auto px-6 sm:px-8 py-16 lg:py-24">
 
-    <div class="max-w-xl mb-12 lg:mb-14">
+    <div class="sec-head max-w-xl mb-12 lg:mb-14">
       <p class="text-dreizack-green text-[13px] font-heading font-bold tracking-wide uppercase mb-3">
         Our Process
       </p>
@@ -317,7 +360,7 @@ tailwind.config = {
 
     <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
 
-      <div class="relative p-6 rounded-2xl border border-dreizack-dark/10 bg-[#f7f8f6]">
+      <div class="step-card relative p-6 rounded-2xl border border-dreizack-dark/10 bg-[#f7f8f6]">
         <p class="font-heading font-extrabold text-dreizack-green text-[14px] mb-4">STEP 01</p>
         <h3 class="font-heading font-bold text-dreizack-dark text-[17px] mb-2">
           Inspect
@@ -327,7 +370,7 @@ tailwind.config = {
         </p>
       </div>
 
-      <div class="relative p-6 rounded-2xl border border-dreizack-dark/10 bg-[#f7f8f6]">
+      <div class="step-card relative p-6 rounded-2xl border border-dreizack-dark/10 bg-[#f7f8f6]">
         <p class="font-heading font-extrabold text-dreizack-green text-[14px] mb-4">STEP 02</p>
         <h3 class="font-heading font-bold text-dreizack-dark text-[17px] mb-2">
           Assess
@@ -337,7 +380,7 @@ tailwind.config = {
         </p>
       </div>
 
-      <div class="relative p-6 rounded-2xl border border-dreizack-dark/10 bg-[#f7f8f6]">
+      <div class="step-card relative p-6 rounded-2xl border border-dreizack-dark/10 bg-[#f7f8f6]">
         <p class="font-heading font-extrabold text-dreizack-green text-[14px] mb-4">STEP 03</p>
         <h3 class="font-heading font-bold text-dreizack-dark text-[17px] mb-2">
           Refurbish
@@ -347,7 +390,7 @@ tailwind.config = {
         </p>
       </div>
 
-      <div class="relative p-6 rounded-2xl border border-dreizack-dark/10 bg-[#f7f8f6]">
+      <div class="step-card relative p-6 rounded-2xl border border-dreizack-dark/10 bg-[#f7f8f6]">
         <p class="font-heading font-extrabold text-dreizack-green text-[14px] mb-4">STEP 04</p>
         <h3 class="font-heading font-bold text-dreizack-dark text-[17px] mb-2">
           Reuse
@@ -367,14 +410,14 @@ tailwind.config = {
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-      <div class="relative aspect-[4/3] rounded-2xl overflow-hidden order-2 lg:order-1">
+      <div class="benefit-img relative aspect-[4/3] rounded-2xl overflow-hidden order-2 lg:order-1">
         <img src="./assets/service-refurbishment-process.jpg"
              onerror="this.onerror=null;this.src='https://picsum.photos/id/1080/800/600';"
              alt="Refurbishment work"
              class="w-full h-full object-cover">
       </div>
 
-      <div class="order-1 lg:order-2">
+      <div class="benefit-text order-1 lg:order-2">
         <p class="text-dreizack-green text-[13px] font-heading font-bold tracking-wide uppercase mb-3">
           Why Refurbish
         </p>
@@ -383,10 +426,10 @@ tailwind.config = {
           Make more value from the equipment you already have
         </h2>
 
-        <div class="space-y-5">
+        <div class="benefit-list space-y-5">
 
           <div class="flex gap-4">
-            <div class="shrink-0 w-10 h-10 rounded-lg bg-dreizack-dark flex items-center justify-center">
+            <div class="icon-pop shrink-0 w-10 h-10 rounded-lg bg-dreizack-dark flex items-center justify-center">
               <svg class="w-5 h-5 text-dreizack-gold" viewBox="0 0 24 24" fill="none"
                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 3v18"></path>
@@ -405,7 +448,7 @@ tailwind.config = {
           </div>
 
           <div class="flex gap-4">
-            <div class="shrink-0 w-10 h-10 rounded-lg bg-dreizack-dark flex items-center justify-center">
+            <div class="icon-pop shrink-0 w-10 h-10 rounded-lg bg-dreizack-dark flex items-center justify-center">
               <svg class="w-5 h-5 text-dreizack-gold" viewBox="0 0 24 24" fill="none"
                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 12h16"></path>
@@ -424,7 +467,7 @@ tailwind.config = {
           </div>
 
           <div class="flex gap-4">
-            <div class="shrink-0 w-10 h-10 rounded-lg bg-dreizack-dark flex items-center justify-center">
+            <div class="icon-pop shrink-0 w-10 h-10 rounded-lg bg-dreizack-dark flex items-center justify-center">
               <svg class="w-5 h-5 text-dreizack-gold" viewBox="0 0 24 24" fill="none"
                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M6 3v18"></path>
@@ -451,69 +494,11 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- ============ FAQ / SUITABILITY ============ -->
-<section class="relative">
-  <div class="max-w-[1240px] mx-auto px-6 sm:px-8 py-16 lg:py-24">
 
-    <div class="max-w-xl mb-12 lg:mb-14">
-      <p class="text-dreizack-green text-[13px] font-heading font-bold tracking-wide uppercase mb-3">
-        Program Scope
-      </p>
-
-      <h2 class="font-heading font-extrabold text-dreizack-dark text-[28px] sm:text-[34px] leading-[1.15]">
-        What can be assessed?
-      </h2>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-
-      <div class="p-6 border border-dreizack-dark/10 rounded-2xl bg-white">
-        <h3 class="font-heading font-bold text-dreizack-dark text-[17px] mb-2">
-          Aluminium panels
-        </h3>
-        <p class="text-[#5a655f] text-[14px] leading-relaxed">
-          Panels can be assessed for condition, cleanliness, damage, deformation
-          and suitability for refurbishment.
-        </p>
-      </div>
-
-      <div class="p-6 border border-dreizack-dark/10 rounded-2xl bg-white">
-        <h3 class="font-heading font-bold text-dreizack-dark text-[17px] mb-2">
-          Pins, wedges & accessories
-        </h3>
-        <p class="text-[#5a655f] text-[14px] leading-relaxed">
-          Associated components can be reviewed alongside the main formwork system.
-        </p>
-      </div>
-
-      <div class="p-6 border border-dreizack-dark/10 rounded-2xl bg-white">
-        <h3 class="font-heading font-bold text-dreizack-dark text-[17px] mb-2">
-          Damaged components
-        </h3>
-        <p class="text-[#5a655f] text-[14px] leading-relaxed">
-          Items showing wear or damage can be identified for repair, replacement
-          or further technical assessment.
-        </p>
-      </div>
-
-      <div class="p-6 border border-dreizack-dark/10 rounded-2xl bg-white">
-        <h3 class="font-heading font-bold text-dreizack-dark text-[17px] mb-2">
-          Existing formwork inventory
-        </h3>
-        <p class="text-[#5a655f] text-[14px] leading-relaxed">
-          Existing equipment can be reviewed as a complete inventory to determine
-          an appropriate refurbishment path.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
 
 <!-- ============ CTA ============ -->
 <section id="enquire" class="relative bg-dreizack-dark">
-  <div class="max-w-[1240px] mx-auto px-6 sm:px-8 py-16 lg:py-20 flex flex-col lg:flex-row items-center justify-between gap-8">
+  <div class="cta-inner max-w-[1240px] mx-auto px-6 sm:px-8 py-16 lg:py-20 flex flex-col lg:flex-row items-center justify-between gap-8">
 
     <div>
       <h2 class="font-heading font-extrabold text-white text-[26px] sm:text-[32px] leading-[1.15] mb-2">
@@ -542,7 +527,150 @@ tailwind.config = {
   </div>
 </section>
 
+<!-- ============ FAQ / SUITABILITY ============ -->
+<section class="relative">
+  <div class="max-w-[1240px] mx-auto px-6 sm:px-8 py-16 lg:py-24">
+
+    <div class="sec-head max-w-xl mb-12 lg:mb-14">
+      <p class="text-dreizack-green text-[13px] font-heading font-bold tracking-wide uppercase mb-3">
+        Program Scope
+      </p>
+
+      <h2 class="font-heading font-extrabold text-dreizack-dark text-[28px] sm:text-[34px] leading-[1.15]">
+        What can be assessed?
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+      <div class="scope-card p-6 border border-dreizack-dark/10 rounded-2xl bg-white">
+        <h3 class="font-heading font-bold text-dreizack-dark text-[17px] mb-2">
+          Aluminium panels
+        </h3>
+        <p class="text-[#5a655f] text-[14px] leading-relaxed">
+          Panels can be assessed for condition, cleanliness, damage, deformation
+          and suitability for refurbishment.
+        </p>
+      </div>
+
+      <div class="scope-card p-6 border border-dreizack-dark/10 rounded-2xl bg-white">
+        <h3 class="font-heading font-bold text-dreizack-dark text-[17px] mb-2">
+          Pins, wedges & accessories
+        </h3>
+        <p class="text-[#5a655f] text-[14px] leading-relaxed">
+          Associated components can be reviewed alongside the main formwork system.
+        </p>
+      </div>
+
+      <div class="scope-card p-6 border border-dreizack-dark/10 rounded-2xl bg-white">
+        <h3 class="font-heading font-bold text-dreizack-dark text-[17px] mb-2">
+          Damaged components
+        </h3>
+        <p class="text-[#5a655f] text-[14px] leading-relaxed">
+          Items showing wear or damage can be identified for repair, replacement
+          or further technical assessment.
+        </p>
+      </div>
+
+      <div class="scope-card p-6 border border-dreizack-dark/10 rounded-2xl bg-white">
+        <h3 class="font-heading font-bold text-dreizack-dark text-[17px] mb-2">
+          Existing formwork inventory
+        </h3>
+        <p class="text-[#5a655f] text-[14px] leading-relaxed">
+          Existing equipment can be reviewed as a complete inventory to determine
+          an appropriate refurbishment path.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
 <?php include './footer.php'; ?>
+
+<!-- ============ ANIMATIONS (JS) ============ -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+  /* 1. Scroll progress bar */
+  const bar = document.createElement('div');
+  bar.id = 'scrollProgress';
+  document.body.appendChild(bar);
+  const onScroll = () => {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`;
+  };
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  if (reduce) return;
+  document.documentElement.classList.add('js-anim');
+
+  /* 2. Choose what reveals, and in what order */
+  const reveal = (els, cls = '', step = 90) =>
+    els.forEach((el, i) => {
+      el.classList.add('reveal');
+      cls.split(' ').filter(Boolean).forEach(c => el.classList.add(c));
+      el.style.setProperty('--d', `${i * step}ms`);
+    });
+
+  // Section headings (eyebrow + title)
+  $$('.sec-head').forEach(h => reveal([...h.children], '', 110));
+
+  // Overview: text lines stagger, image from the right
+  const ovText = document.querySelector('.ov-text');
+  if (ovText) reveal([...ovText.children], '', 100);
+  const ovImg = document.querySelector('.ov-img');
+  if (ovImg) reveal([ovImg], 'from-right');
+
+  // Why Refurbish: image from the left, heading lines then each benefit in turn
+  const bImg = document.querySelector('.benefit-img');
+  if (bImg) reveal([bImg], 'from-left');
+  const bText = document.querySelector('.benefit-text');
+  if (bText) {
+    const items = [...bText.children].flatMap(c => c.classList.contains('benefit-list') ? [...c.children] : [c]);
+    reveal(items, '', 110);
+  }
+
+  // Grids: stagger within each group
+  const group = (sel, cls, step) => {
+    const groups = new Map();
+    $$(sel).forEach(el => {
+      if (!groups.has(el.parentElement)) groups.set(el.parentElement, []);
+      groups.get(el.parentElement).push(el);
+    });
+    groups.forEach(list => reveal(list, cls, step));
+  };
+  group('.feat-card', '', 100);
+  group('.step-card', '', 140);
+  group('.scope-card', '', 100);
+
+  // CTA banner: text, then button
+  const cta = document.querySelector('.cta-inner');
+  if (cta) reveal([...cta.children], '', 150);
+
+  /* 3. Trigger on scroll; clean up afterwards so your hover styles take over */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      el.classList.add('in');
+      io.unobserve(el);
+      const delay = parseFloat(el.style.getPropertyValue('--d')) || 0;
+      setTimeout(() => {
+        el.classList.remove('reveal', 'from-left', 'from-right', 'pop', 'in');
+        el.style.removeProperty('--d');
+      }, delay + 1100);
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+
+  $$('.reveal').forEach(el => io.observe(el));
+});
+</script>
 
 </body>
 </html>

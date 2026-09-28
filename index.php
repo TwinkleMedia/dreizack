@@ -9,6 +9,56 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="style.css">
 <script src="./script.js"></script>
+
+<!-- ============ ANIMATIONS (CSS) ============ -->
+<style>
+  /* Scroll progress bar */
+  #scrollProgress {
+    position: fixed; top: 0; left: 0; height: 3px; width: 100%;
+    background: #f5b800; /* swap for your dreizack-gold */
+    transform-origin: 0 50%; transform: scaleX(0);
+    z-index: 60; pointer-events: none;
+  }
+
+  /* Hero: slow push-in on the active slide */
+  #carouselTrack img { transform: scale(1); will-change: transform; }
+  #carouselTrack img.is-active { animation: heroPush 6.5s ease-out forwards; }
+  @keyframes heroPush { from { transform: scale(1); } to { transform: scale(1.08); } }
+
+  /* Scroll reveals (uses `translate` so hover transforms are untouched) */
+  .js-anim .reveal {
+    opacity: 0;
+    translate: 0 28px;
+    transition: opacity .7s cubic-bezier(.2,.7,.2,1) var(--d, 0ms),
+                translate .7s cubic-bezier(.2,.7,.2,1) var(--d, 0ms);
+  }
+  .js-anim .reveal.from-left  { translate: -36px 0; }
+  .js-anim .reveal.from-right { translate: 36px 0; }
+  .js-anim .reveal.pop        { translate: 0 14px; scale: .85; transition-property: opacity, translate, scale; }
+  .js-anim .reveal.in { opacity: 1; translate: 0 0; scale: 1; }
+
+  /* About: green offset block slides out from behind the photo */
+  .js-anim .about-block { translate: 20px 20px; opacity: 0; transition: translate .9s cubic-bezier(.2,.7,.2,1) .25s, opacity .6s ease .25s; }
+  .js-anim .about-block.in { translate: 0 0; opacity: 1; }
+
+  /* Process: arrows fade in, final badge pulses */
+  .js-anim .flow-arrow { opacity: 0; transition: opacity .4s ease var(--d, 0ms); }
+  .js-anim .flow-arrow.in { opacity: 1; }
+  .pulse-ring { animation: pulseRing 2.2s ease-out infinite; }
+  @keyframes pulseRing {
+    0%   { box-shadow: 0 0 0 0 rgba(245,184,0,.55); }
+    70%  { box-shadow: 0 0 0 14px rgba(245,184,0,0); }
+    100% { box-shadow: 0 0 0 0 rgba(245,184,0,0); }
+  }
+
+  /* Respect "reduce motion" */
+  @media (prefers-reduced-motion: reduce) {
+    #carouselTrack img.is-active, .pulse-ring { animation: none; }
+    .js-anim .reveal, .js-anim .about-block, .js-anim .flow-arrow {
+      opacity: 1 !important; translate: none !important; scale: 1 !important; transition: none !important;
+    }
+  }
+</style>
 </head>
 <body class="font-body bg-[#FAFAF7] min-h-screen">
     <?php 
@@ -769,6 +819,109 @@ include "./footer.php"
   goTo(0);
   startAuto();
 })();
+</script>
+
+<!-- ============ ANIMATIONS (JS) ============ -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+  /* 1. Scroll progress bar */
+  const bar = document.createElement('div');
+  bar.id = 'scrollProgress';
+  document.body.appendChild(bar);
+  const onScroll = () => {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`;
+  };
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* 2. Hero push-in synced to the carousel */
+  const track = document.getElementById('carouselTrack');
+  if (track && !reduce) {
+    const imgs = [...track.children];
+    const sync = () => {
+      const m = /translateX\(-?([\d.]+)%\)/.exec(track.style.transform || '');
+      const idx = m ? Math.round(parseFloat(m[1]) / 100) : 0;
+      imgs.forEach((img, i) => {
+        if (i === idx) { img.classList.remove('is-active'); void img.offsetWidth; img.classList.add('is-active'); }
+        else img.classList.remove('is-active');
+      });
+    };
+    new MutationObserver(sync).observe(track, { attributes: true, attributeFilter: ['style'] });
+    sync();
+  }
+
+  if (reduce) return;
+  document.documentElement.classList.add('js-anim');
+
+  /* 3. Choose what reveals, and in what order */
+  const reveal = (els, cls = '', step = 90) =>
+    els.forEach((el, i) => {
+      el.classList.add('reveal');
+      cls.split(' ').filter(Boolean).forEach(c => el.classList.add(c));
+      el.style.setProperty('--d', `${i * step}ms`);
+    });
+
+  // About: photo from left, text staggered, offset block slides out
+  const about = document.getElementById('about');
+  if (about) {
+    const img = about.querySelector('.lg\\:col-span-5');
+    const txt = about.querySelector('.lg\\:col-span-7');
+    if (img) reveal([img], 'from-left');
+    if (txt) {
+      const strip = txt.querySelector('.mt-10');
+      reveal([...txt.children].filter(c => c !== strip), '', 110);
+      if (strip) reveal([...strip.children], '', 120);
+    }
+    const block = about.querySelector('.bg-dreizack-green.absolute');
+    if (block) block.classList.add('about-block');
+  }
+
+  // Card groups: stagger within each grid
+  ['.why-card', '.app-card', '.proj-card', '.feat-card'].forEach(sel => {
+    const groups = new Map();
+    $$(sel).forEach(el => {
+      if (!groups.has(el.parentElement)) groups.set(el.parentElement, []);
+      groups.get(el.parentElement).push(el);
+    });
+    groups.forEach(list => reveal(list, '', 110));
+  });
+
+  // Manufacturing process: steps appear in sequence with arrows
+  const firstStep = document.querySelector('.step');
+  if (firstStep) {
+    const flow = firstStep.parentElement;
+    [...flow.children].forEach((el, i) => {
+      if (el.classList.contains('step')) reveal([el], 'pop');
+      else el.classList.add('flow-arrow');
+      el.style.setProperty('--d', `${i * 130}ms`);
+    });
+    const last = flow.querySelector('.step:last-child .step-badge');
+    if (last) last.classList.add('pulse-ring');
+    const procImg = flow.closest('section')?.querySelector('.lg\\:col-span-6.relative');
+    if (procImg) reveal([procImg], 'from-right');
+  }
+
+  /* 4. Trigger on scroll; clean up afterwards so your hover styles take over */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      el.classList.add('in');
+      io.unobserve(el);
+      const delay = parseFloat(el.style.getPropertyValue('--d')) || 0;
+      setTimeout(() => {
+        el.classList.remove('reveal', 'from-left', 'from-right', 'pop', 'flow-arrow', 'about-block', 'in');
+        el.style.removeProperty('--d');
+      }, delay + 1100);
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+
+  $$('.reveal, .flow-arrow, .about-block').forEach(el => io.observe(el));
+});
 </script>
 
 </body>
