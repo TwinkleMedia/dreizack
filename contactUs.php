@@ -128,8 +128,7 @@ include "./navbar.php"
           </div>
           <div>
             <h3 class="font-heading font-bold text-dreizack-dark text-[15.5px] mb-1">Call Us</h3>
-            <a href="tel:+910000000000" class="block text-[#5a655f] text-[14px] hover:text-dreizack-green transition-colors">+91 00000 00000</a>
-            <a href="tel:+910000000001" class="block text-[#5a655f] text-[14px] hover:text-dreizack-green transition-colors">+91 00000 00001</a>
+            <a href="tel:+910000000000" class="block text-[#5a655f] text-[14px] hover:text-dreizack-green transition-colors">+91 9082007056</a>
           </div>
         </div>
 
@@ -143,8 +142,7 @@ include "./navbar.php"
           </div>
           <div>
             <h3 class="font-heading font-bold text-dreizack-dark text-[15.5px] mb-1">Email Us</h3>
-            <a href="mailto:info@dreizack.com" class="block text-[#5a655f] text-[14px] hover:text-dreizack-green transition-colors">info@dreizack.com</a>
-            <a href="mailto:sales@dreizack.com" class="block text-[#5a655f] text-[14px] hover:text-dreizack-green transition-colors">sales@dreizack.com</a>
+            <a href="mailto:info@dreizack.com" class="block text-[#5a655f] text-[14px] hover:text-dreizack-green transition-colors">project@dreizackinc.com</a>
           </div>
         </div>
 
@@ -157,10 +155,25 @@ include "./navbar.php"
             </svg>
           </div>
           <div>
-            <h3 class="font-heading font-bold text-dreizack-dark text-[15.5px] mb-1">Visit Us</h3>
+            <h3 class="font-heading font-bold text-dreizack-dark text-[15.5px] mb-1">Head Office</h3>
             <p class="text-[#5a655f] text-[14px] leading-relaxed">
-              Plot No. 00, Industrial Area,<br>
-              City, State — 000000, India
+              Dreizack Formwork Solutions LLP Gami Industrial Park, Plot No - C-39, Unit No.68, 5th floor, B1 wing, Pawne MIDC,<br>
+              Navi Mumbai 400710, Maharashtra, India,
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-white border border-dreizack-dark/10 rounded-2xl p-6">
+          <div class="w-12 h-12 shrink-0 rounded-xl bg-dreizack-dark flex items-center justify-center">
+            <svg class="w-5 h-5 text-dreizack-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-dreizack-dark text-[15.5px] mb-1">Manufacturing HQ</h3>
+            <p class="text-[#5a655f] text-[14px] leading-relaxed">
+              Gat No.1540/1419, Shelarwasti, Talawade, Chinchwad, Pune - 411062, Maharashtra, India
             </p>
           </div>
         </div>

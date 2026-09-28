@@ -44,11 +44,11 @@
                     group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
                     transition-all duration-200 ease-out">
           <div class="w-60 bg-white rounded-xl border border-dreizack-dark/10 shadow-[0_18px_36px_-14px_rgba(0,72,45,0.28)] overflow-hidden py-2">
-            <a href="./product-aluminium-formwork.html" class="flex items-center justify-between px-4 py-3 font-heading font-semibold text-[14.5px] text-[#1A2420] hover:bg-dreizack-green/10 hover:text-dreizack-green transition-colors">
+            <a href="./aluminiumProducts.php" class="flex items-center justify-between px-4 py-3 font-heading font-semibold text-[14.5px] text-[#1A2420] hover:bg-dreizack-green/10 hover:text-dreizack-green transition-colors">
               Aluminium Formwork
               <span class="text-dreizack-orange font-bold">→</span>
             </a>
-            <a href="./product-safety-screen.html" class="flex items-center justify-between px-4 py-3 font-heading font-semibold text-[14.5px] text-[#1A2420] hover:bg-dreizack-green/10 hover:text-dreizack-green transition-colors">
+            <a href="./product-safety-screen.php" class="flex items-center justify-between px-4 py-3 font-heading font-semibold text-[14.5px] text-[#1A2420] hover:bg-dreizack-green/10 hover:text-dreizack-green transition-colors">
               Safety Screen
               <span class="text-dreizack-orange font-bold">→</span>
             </a>
@@ -122,10 +122,10 @@
           <svg class="mobile-accordion-chevron w-4 h-4 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="mobile-accordion-panel max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-          <a href="./product-aluminium-formwork.html" class="flex items-center justify-between font-heading font-medium text-[15px] text-[#1A2420]/80 py-3 pl-4 hover:text-dreizack-green">
+          <a href="./aluminiumProducts.php" class="flex items-center justify-between font-heading font-medium text-[15px] text-[#1A2420]/80 py-3 pl-4 hover:text-dreizack-green">
             Aluminium Formwork <span class="text-dreizack-orange font-bold">→</span>
           </a>
-          <a href="./product-safety-screen.html" class="flex items-center justify-between font-heading font-medium text-[15px] text-[#1A2420]/80 py-3 pl-4 pb-4 hover:text-dreizack-green">
+          <a href="./product-safety-screen.php" class="flex items-center justify-between font-heading font-medium text-[15px] text-[#1A2420]/80 py-3 pl-4 pb-4 hover:text-dreizack-green">
             Safety Screen <span class="text-dreizack-orange font-bold">→</span>
           </a>
         </div>
