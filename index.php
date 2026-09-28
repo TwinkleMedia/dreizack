@@ -300,9 +300,9 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10">
 
       <!-- Card: Aluminium Formwork -->
-      <a href="./product-aluminium-formwork.html" class="app-card group block">
+      <a href="./aluminiumProducts.php" class="app-card group block">
         <div class="relative aspect-[4/3] overflow-hidden">
-          <img src="./assets/product1.jpg"
+          <img src="./assets/alumframe.jpg"
                onerror="this.onerror=null;this.src='https://picsum.photos/id/1076/700/560';"
                alt="Aluminium Formwork product" class="app-img w-full h-full object-cover transition-transform duration-500">
           <div class="absolute inset-0 bg-gradient-to-t from-dreizack-dark/70 via-dreizack-dark/0 to-transparent"></div>
@@ -316,9 +316,9 @@
       </a>
 
       <!-- Card: Safety Screen -->
-      <a href="./product-safety-screen.html" class="app-card group block">
+      <a href="./product-safety-screen.php" class="app-card group block">
         <div class="relative aspect-[4/3] overflow-hidden">
-          <img src="./assets/product2.jpg"
+          <img src="./assets/safety-screen.jpg"
                onerror="this.onerror=null;this.src='https://picsum.photos/id/1080/700/560';"
                alt="Safety Screen product" class="app-img w-full h-full object-cover transition-transform duration-500">
           <div class="absolute inset-0 bg-gradient-to-t from-dreizack-dark/70 via-dreizack-dark/0 to-transparent"></div>
@@ -353,7 +353,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10">
 
       <!-- Card: Refurbishment Program -->
-      <a href="./service-refurbishment-program.html" class="app-card group block">
+      <a href="./service-refurbishment-program.php" class="app-card group block">
         <div class="relative aspect-[4/3] overflow-hidden">
           <img src="./assets/service1.jpg"
                onerror="this.onerror=null;this.src='https://picsum.photos/id/1076/700/560';"
@@ -369,9 +369,9 @@
       </a>
 
       <!-- Card: Formwork Re-designing -->
-      <a href="./service-formwork-redesigning.html" class="app-card group block">
+      <a href="./service-formwork-redesigning.php" class="app-card group block">
         <div class="relative aspect-[4/3] overflow-hidden">
-          <img src="./assets/service2.jpg"
+          <img src="./assets/redesignFreame1.jpg"
                onerror="this.onerror=null;this.src='https://picsum.photos/id/1080/700/560';"
                alt="Formwork Re-designing service" class="app-img w-full h-full object-cover transition-transform duration-500">
           <div class="absolute inset-0 bg-gradient-to-t from-dreizack-dark/70 via-dreizack-dark/0 to-transparent"></div>
