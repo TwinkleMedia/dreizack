@@ -16,7 +16,7 @@
   <div class="max-w-[1240px] h-full mx-auto px-4 sm:px-7 flex items-center justify-between gap-6 relative">
 
     <!-- Logo -->
-    <a href="#" class="flex items-center gap-3 shrink-0" aria-label="Dreizack home">
+    <a href="./index.php" class="flex items-center gap-3 shrink-0" aria-label="Dreizack home">
       <img src="./assets/Dreizack  Logo TM.png" alt="Dreizack logo" class="h-36 w-auto shrink-0">
     </a>
 
