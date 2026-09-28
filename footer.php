@@ -79,18 +79,18 @@
         <!-- Products -->
         <div class="flex flex-col gap-2 mt-1">
           <span class="text-white/85 font-heading font-semibold text-[14.5px]">Products</span>
-          <a href="./product-aluminium-formwork.html" class="text-white/65 hover:text-dreizack-gold text-[14px] transition-colors w-fit pl-3">Aluminium Formwork</a>
-          <a href="./product-safety-screen.html" class="text-white/65 hover:text-dreizack-gold text-[14px] transition-colors w-fit pl-3">Safety Screen</a>
+          <a href="./aluminiumProducts.php" class="text-white/65 hover:text-dreizack-gold text-[14px] transition-colors w-fit pl-3">Aluminium Formwork</a>
+          <a href="./product-safety-screen.php" class="text-white/65 hover:text-dreizack-gold text-[14px] transition-colors w-fit pl-3">Safety Screen</a>
         </div>
 
         <!-- Services -->
         <div class="flex flex-col gap-2 mt-1">
           <span class="text-white/85 font-heading font-semibold text-[14.5px]">Services</span>
-          <a href="./service-refurbishment-program.html" class="text-white/65 hover:text-dreizack-gold text-[14px] transition-colors w-fit pl-3">Refurbishment Program</a>
-          <a href="./service-formwork-redesigning.html" class="text-white/65 hover:text-dreizack-gold text-[14px] transition-colors w-fit pl-3">Formwork Re-designing</a>
+          <a href="./service-refurbishment-program.php" class="text-white/65 hover:text-dreizack-gold text-[14px] transition-colors w-fit pl-3">Refurbishment Program</a>
+          <a href="./service-formwork-redesigning.php" class="text-white/65 hover:text-dreizack-gold text-[14px] transition-colors w-fit pl-3">Formwork Re-designing</a>
         </div>
 
-        <a href="#" class="text-white/65 hover:text-dreizack-gold text-[14.5px] transition-colors w-fit mt-1">Contact Us</a>
+        <a href="./contactUs.php" class="text-white/65 hover:text-dreizack-gold text-[14.5px] transition-colors w-fit mt-1">Contact Us</a>
       </div>
 
       <!-- Contact -->
