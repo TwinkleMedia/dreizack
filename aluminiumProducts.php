@@ -40,7 +40,7 @@
 <!-- ============ HERO ============ -->
 <section class="relative overflow-hidden bg-dreizack-dark">
   <div class="absolute inset-0">
-    <img src="./assets/product1-hero.jpg"
+    <img src="./assets/alumframe.jpg"
          onerror="this.onerror=null;this.src='https://picsum.photos/id/1076/1600/900';"
          alt="Aluminium Formwork on site" class="w-full h-full object-cover opacity-30">
     <div class="absolute inset-0 bg-gradient-to-r from-dreizack-dark via-dreizack-dark/85 to-dreizack-dark/40"></div>
@@ -127,7 +127,7 @@
       </div>
 
       <div class="relative aspect-[4/3] rounded-2xl overflow-hidden">
-        <img src="./assets/product1-overview.jpg"
+        <img src="./assets/alumframe.jpg"
              onerror="this.onerror=null;this.src='https://picsum.photos/id/1078/800/600';"
              alt="Aluminium Formwork panels" class="w-full h-full object-cover">
       </div>
@@ -306,32 +306,6 @@
   </div>
 </section>
 
-<!-- ============ GALLERY ============ -->
-<section class="relative">
-  <div class="max-w-[1240px] mx-auto px-6 sm:px-8 py-16 lg:py-24">
-    <div class="max-w-xl mb-12 lg:mb-14">
-      <p class="text-dreizack-green text-[13px] font-heading font-bold tracking-wide uppercase mb-3">Gallery</p>
-      <h2 class="font-heading font-extrabold text-dreizack-dark text-[28px] sm:text-[34px] leading-[1.15]">
-        Aluminium Formwork on site
-      </h2>
-    </div>
-
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-      <div class="aspect-square rounded-xl overflow-hidden">
-        <img src="./assets/product1-gallery-1.jpg" onerror="this.onerror=null;this.src='https://picsum.photos/id/1076/400/400';" alt="Aluminium formwork gallery 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-      </div>
-      <div class="aspect-square rounded-xl overflow-hidden">
-        <img src="./assets/product1-gallery-2.jpg" onerror="this.onerror=null;this.src='https://picsum.photos/id/1078/400/400';" alt="Aluminium formwork gallery 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-      </div>
-      <div class="aspect-square rounded-xl overflow-hidden">
-        <img src="./assets/product1-gallery-3.jpg" onerror="this.onerror=null;this.src='https://picsum.photos/id/1080/400/400';" alt="Aluminium formwork gallery 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-      </div>
-      <div class="aspect-square rounded-xl overflow-hidden">
-        <img src="./assets/product1-gallery-4.jpg" onerror="this.onerror=null;this.src='https://picsum.photos/id/1082/400/400';" alt="Aluminium formwork gallery 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ============ CTA BANNER ============ -->
 <section id="enquire" class="relative bg-dreizack-dark">
@@ -353,6 +327,34 @@
     </a>
   </div>
 </section>
+
+<!-- ============ GALLERY ============ -->
+<section class="relative">
+  <div class="max-w-[1240px] mx-auto px-6 sm:px-8 py-16 lg:py-24">
+    <div class="max-w-xl mb-12 lg:mb-14">
+      <p class="text-dreizack-green text-[13px] font-heading font-bold tracking-wide uppercase mb-3">Gallery</p>
+      <h2 class="font-heading font-extrabold text-dreizack-dark text-[28px] sm:text-[34px] leading-[1.15]">
+        Aluminium Formwork on site
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div class="aspect-square rounded-xl overflow-hidden">
+        <img src="./assets/alumframe1.jpg" onerror="this.onerror=null;this.src='https://picsum.photos/id/1076/400/400';" alt="Aluminium formwork gallery 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden">
+        <img src="./assets/alumframe2.jpg" onerror="this.onerror=null;this.src='https://picsum.photos/id/1078/400/400';" alt="Aluminium formwork gallery 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden">
+        <img src="./assets/alumframe3.jpg" onerror="this.onerror=null;this.src='https://picsum.photos/id/1080/400/400';" alt="Aluminium formwork gallery 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden">
+        <img src="./assets/alumframe4.jpg" onerror="this.onerror=null;this.src='https://picsum.photos/id/1082/400/400';" alt="Aluminium formwork gallery 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- Include your existing footer.html here -->
 <?php 

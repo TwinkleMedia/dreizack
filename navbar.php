@@ -68,11 +68,11 @@
                     group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
                     transition-all duration-200 ease-out">
           <div class="w-64 bg-white rounded-xl border border-dreizack-dark/10 shadow-[0_18px_36px_-14px_rgba(0,72,45,0.28)] overflow-hidden py-2">
-            <a href="./service-refurbishment-program.html" class="flex items-center justify-between px-4 py-3 font-heading font-semibold text-[14.5px] text-[#1A2420] hover:bg-dreizack-green/10 hover:text-dreizack-green transition-colors">
+            <a href="./service-refurbishment-program.php" class="flex items-center justify-between px-4 py-3 font-heading font-semibold text-[14.5px] text-[#1A2420] hover:bg-dreizack-green/10 hover:text-dreizack-green transition-colors">
               Refurbishment Program
               <span class="text-dreizack-orange font-bold">→</span>
             </a>
-            <a href="./service-formwork-redesigning.html" class="flex items-center justify-between px-4 py-3 font-heading font-semibold text-[14.5px] text-[#1A2420] hover:bg-dreizack-green/10 hover:text-dreizack-green transition-colors">
+            <a href="./service-formwork-redesigning.php" class="flex items-center justify-between px-4 py-3 font-heading font-semibold text-[14.5px] text-[#1A2420] hover:bg-dreizack-green/10 hover:text-dreizack-green transition-colors">
               Formwork Re-designing
               <span class="text-dreizack-orange font-bold">→</span>
             </a>
@@ -87,7 +87,7 @@
     </nav>
 
     <!-- CTA (right) -->
-    <a href="#" class="hidden md:inline-block font-heading font-bold text-[14.5px] text-white px-6 py-2.5 rounded-lg whitespace-nowrap
+    <a href="./contactUs.php" class="hidden md:inline-block font-heading font-bold text-[14.5px] text-white px-6 py-2.5 rounded-lg whitespace-nowrap
                bg-gradient-to-br from-dreizack-dark to-dreizack-green
                shadow-[0_6px_16px_-6px_rgba(0,72,45,0.45)]
                hover:-translate-y-0.5 hover:shadow-[0_10px_22px_-6px_rgba(0,72,45,0.55)] hover:brightness-105
@@ -138,10 +138,10 @@
           <svg class="mobile-accordion-chevron w-4 h-4 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="mobile-accordion-panel max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-          <a href="./service-refurbishment-program.html" class="flex items-center justify-between font-heading font-medium text-[15px] text-[#1A2420]/80 py-3 pl-4 hover:text-dreizack-green">
+          <a href="./service-refurbishment-program.php" class="flex items-center justify-between font-heading font-medium text-[15px] text-[#1A2420]/80 py-3 pl-4 hover:text-dreizack-green">
             Refurbishment Program <span class="text-dreizack-orange font-bold">→</span>
           </a>
-          <a href="./service-formwork-redesigning.html" class="flex items-center justify-between font-heading font-medium text-[15px] text-[#1A2420]/80 py-3 pl-4 pb-4 hover:text-dreizack-green">
+          <a href="./service-formwork-redesigning.php" class="flex items-center justify-between font-heading font-medium text-[15px] text-[#1A2420]/80 py-3 pl-4 pb-4 hover:text-dreizack-green">
             Formwork Re-designing <span class="text-dreizack-orange font-bold">→</span>
           </a>
         </div>
@@ -150,7 +150,7 @@
       <a href="./contactUs.php" class="flex items-center justify-between font-heading font-semibold text-[16.5px] text-[#1A2420] py-4 hover:text-dreizack-green">
         Contact Us <span class="text-dreizack-orange font-bold">→</span>
       </a>
-      <a href="#" class="mt-4 text-center font-heading font-bold text-[15px] text-white py-3.5 rounded-lg bg-gradient-to-br from-dreizack-dark to-dreizack-green">
+      <a href="./contactUs.php" class="mt-4 text-center font-heading font-bold text-[15px] text-white py-3.5 rounded-lg bg-gradient-to-br from-dreizack-dark to-dreizack-green">
         Get a Quote
       </a>
     </nav>
