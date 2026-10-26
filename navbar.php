@@ -76,6 +76,10 @@
               Formwork Re-designing
               <span class="text-dreizack-orange font-bold">→</span>
             </a>
+            <a href="./service-rental-Formwork.php" class="flex items-center justify-between px-4 py-3 font-heading font-semibold text-[14.5px] text-[#1A2420] hover:bg-dreizack-green/10 hover:text-dreizack-green transition-colors">
+             Rental of Aluminium Formwork 
+              <span class="text-dreizack-orange font-bold">→</span>
+            </a>
           </div>
         </div>
       </div>
